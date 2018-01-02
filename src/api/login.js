@@ -8,14 +8,14 @@ export function loginByUsername(userName, password) {
 }
 
 export function logout() {
-  return Http.get('/proxy/quit')
+  return Http.get('/post/quit')
 }
 
 export function getUserInfo() {
-  return Http.get('/proxy/account')
+  return Http.get('/get/account')
 }
 
 export function  modifyPwd(data) {
-  return Http.post('/proxy/modifyPwd',data)
+  return Http.post('/post/modifyPwd',data)
 }
 

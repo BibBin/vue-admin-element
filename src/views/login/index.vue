@@ -32,10 +32,12 @@ export default {
       loginRules: {
         userName: [
           { required: true,message: '请输入用户名', trigger: 'blur'},
-          {pattern: /^admin/, message: '用户名不正确', trigger: 'blur'}],
+          {pattern: /^admin/, message: '用户名不正确', trigger: 'blur'},
+          { min: 5, max: 5, message: '用户名不正确', trigger: 'blur' }],
         password: [
           { required: true,message: '请输入密码', trigger: 'blur' },
           {pattern: /^111/, message: '密码不正确', trigger: 'blur'},
+          { min: 3, max: 3, message: '密码不正确', trigger: 'blur' }
           ]
       },
       loading: false,

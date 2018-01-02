@@ -26,7 +26,18 @@ let routes = [
     icon: 'el-icon-menu',
     children: [
       { path: 'active-list', component: _import('menber/menberList'), meta: { keepAlive: true },name: '会员列表 ' },
-      { path: 'add-new-member', component: _import('menber/menberAdd'),meta: { keepAlive: true }, name: '添加会员 ' }
+      { path: 'add-new-member', component: _import('menber/menberAdd'),meta: { keepAlive: true }, name: '添加会员 ' },
+      { path: 'member-activity', component: _import('menber/activity'),meta: { keepAlive: true }, name: '创建活动 ' }
+    ]
+  },
+  {
+    path: '/rpt',
+    component: Layout,
+    redirect: '/rpt/demo',
+    name: '报表管理',
+    icon: 'el-icon-document',
+    children: [
+      { path: 'demo', component: _import('echarts/index'), meta: { keepAlive: true },name: 'Echarts-demo' }
     ]
   },
   {

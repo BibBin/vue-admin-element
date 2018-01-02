@@ -9,7 +9,7 @@
         </el-col>
         <el-col :span="12">
           <span>会员姓名:</span>
-          <span v-text="inputs.data.nick"></span>
+          <span v-text="inputs.data.nickName"></span>
         </el-col>
       </el-row>
       <el-row>

@@ -12,6 +12,9 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
+//import echarts from 'echarts' //有需要可以开启全局加载echarts
+//Vue.prototype.$echarts = echarts
+
 Vue.config.productionTip = false
 
 new Vue({

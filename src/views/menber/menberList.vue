@@ -53,7 +53,8 @@
           <template slot-scope="scope">
             <el-button size="mini" type="primary" @click.native="handleLocked(scope.row,'info')">会员编辑</el-button>
             <el-button size="mini" type="primary" @click.native="handleLocked(scope.row,'password')">修改密码</el-button>
-            <el-button size="mini" type="danger" @click.native="handleLocked(scope.row,'delete')">会员禁用</el-button>
+            <el-button v-if="scope.row.status === 1" size="mini" type="danger" @click.native="handleLocked(scope.row,'changeStatus')">会员禁用</el-button>
+            <el-button v-if="scope.row.status === 2" size="mini" type="success" @click.native="handleLocked(scope.row,'changeStatus')">会员解禁</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -148,8 +149,8 @@
             this.resetPassword.show = true;
             this.resetPassword.data = data;
             break;
-          case 'delete':
-            this.deleteMenber(data);
+          case 'changeStatus':
+            this.deleteMember(data);
             break;
           default:;
         }
@@ -203,7 +204,21 @@
         });
         this.editUserInfo.show = false;
       },
-      deleteMenber(data){}
+      deleteMember(data){
+        var t_msg = data.status == 1?'禁用会员,确认禁用?':'解封会员,确认解封?'
+        this.$confirm(t_msg, '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.$notify({
+            title: '成功',
+            message: '修改成功！',
+            type: 'success'
+          });
+          this.getUsersHttp();
+        })
+      }
     },
     mounted() {
 

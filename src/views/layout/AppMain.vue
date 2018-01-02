@@ -1,9 +1,12 @@
 <template>
 	<section class="app-main" style="min-height: 100%;padding:0 10px;">
 		<transition name="fade" mode="out-in">
+      <div>
       <keep-alive>
-        <router-view></router-view>
+        <router-view v-if="$route.meta.keepAlive"></router-view>
       </keep-alive>
+      <router-view v-if="!$route.meta.keepAlive"></router-view>
+      </div>
 		</transition>
 	</section>
 </template>
