@@ -129,7 +129,7 @@
     }
   }
 </script>
-<style lang="scss">
+<style rel="stylesheet/scss" scoped lang="scss">
   .menberEditDialog{
     padding-bottom:0 ;
     max-width: 500px;

@@ -14,10 +14,9 @@ var router =  new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: routes
 });
-// register global progress.
-const whiteList = ['/login', '/authredirect']// 不重定向白名单
 router.beforeEach((to, from, next) => {
-  NProgress.start() // 开启Progress
+
+  NProgress.start();
   if ($vx.localStorage.getItem('token')) { // 判断是否有token
     if (to.path === '/login') {
       next({ path: '/' })
@@ -26,12 +25,8 @@ router.beforeEach((to, from, next) => {
       next()
     }
   } else {
-    if (whiteList.indexOf(to.path) !== -1) { // 在免登录白名单，直接进入
-      next()
-    } else {
-      next('/login') // 否则全部重定向到登录页
+      next('/login')  // 重定向到登录页
       NProgress.done()
-    }
   }
 })
 

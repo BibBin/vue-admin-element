@@ -228,7 +228,7 @@
     }
   }
 </script>
-<style rel="stylesheet/scss" lang="scss">
+<style rel="stylesheet/scss" scoped lang="scss">
   .member{
     .el-button+.el-button{
       margin-left:0;

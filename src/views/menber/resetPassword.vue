@@ -96,7 +96,7 @@
     }
   }
 </script>
-<style lang="scss">
+<style rel="stylesheet/scss" scoped lang="scss">
   .resetPasswordDialog{
     padding-bottom:0 ;
     max-width: 450px;
