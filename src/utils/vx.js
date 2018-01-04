@@ -141,6 +141,12 @@ vx.padding = function padding(s, len) {
   return s;
 };
 
+vx.createUniqueString = function () {
+  const timestamp = +new Date() + ''
+  const randomNum = parseInt((1 + Math.random()) * 65536) + ''
+  return (+(randomNum + timestamp)).toString(32)
+};
+
 vx.generateLink = function (longUrl, campaign) {
   var long_url = longUrl;
   if (campaign.id && campaign.tpCategory) {
