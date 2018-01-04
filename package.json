@@ -20,8 +20,9 @@
     "js-cookie": "2.1.4",
     "nprogress": "0.2.0",
     "vue": "2.5.10",
-    "vue-template-compiler":"2.5.10",
+    "vue-countup-v2": "^0.1.2",
     "vue-router": "2.7.0",
+    "vue-template-compiler": "2.5.10",
     "vuex": "2.3.1"
   },
   "devDependencies": {
