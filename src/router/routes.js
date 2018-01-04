@@ -4,7 +4,7 @@
 const _import = require('./_import_' + process.env.NODE_ENV)
 import Layout from '../views/layout/Layout'
 
-let routes = [
+var routes = [
   { path: '/login', component: _import('login/index'), hidden: true,meta: { keepAlive: false } },
   { path: '/404', component: _import('errorPage/404'), hidden: true,meta: { keepAlive: false } },
   { path: '/401', component: _import('errorPage/401'), hidden: true,meta: { keepAlive: false } },

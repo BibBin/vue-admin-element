@@ -2,7 +2,6 @@
 var SIGN_REGEXP = /([yMdhsm])(\1*)/g;
 var DEFAULT_PATTERN = 'yyyy-MM-dd';
 
-
 var vx = { version: '1.0'};
 
 vx.hasProp = function(obj, prop) {
